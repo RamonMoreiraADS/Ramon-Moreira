@@ -1,0 +1,68 @@
+﻿<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <title>Calculo da idade de namoro</title>
+    <link rel="icon" href="imagens/favorito.ico" type="image/png">
+    <meta charset="UTF-8">
+    <script type="text/javascript" src="script.js"></script>
+    <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+    <div id="wrapper">
+    <h1>TESTE DE IDADE PARA NAMORAR!</h1>
+
+    <section>
+        <div id="cx_ind" onmouseover="troca_fundo_solteiro()">
+            <h2>VEJA A IDADE PARA ALGUÉM NAMORAR COM VOCÊ AQUI</h2>
+
+            <label for="idade_ind">Sua Idade:</label>
+            <input type="number" id="idade_ind" name="idade_ind" placeholder="ano(s)" min="0" required>
+            <input type="number" id="idade_ind_mes" name="idade_ind_mes" placeholder="mes(es)" min="0" max="12" required>
+
+            <p id="res_ind"></p>
+            
+            <button type="button" id="botao_ind">TESTAR</button>
+        </div>
+
+        <div id="cx_casal">
+            <h2>VEJA A IDADE ENTRE O CASAL</h2>
+
+            <label for="idade_casal1">1º Pessoa:</label>
+            <input type="number" id="idade_casal1" name="idade_casal1" placeholder="ano(s)" min="0" required>
+            <input type="number" id="idade_casal1_mes" name="idade_casal1_mes" placeholder="mes(es)" min="0" max="12" required><br>
+
+            <label for="idade_casal2">2º Pessoa:</label>
+            <input type="number" id="idade_casal2" name="idade_casal2" placeholder="ano(s)" min="0" required>
+            <input type="number" id="idade_casal2_mes" name="idade_casal2_mes" placeholder="mes(es)" min="0" max="12" required>
+
+            <p id="res_casal"></p>
+
+            <button type="button" id="botao_casal">TESTAR</button>
+        </div>
+
+        <div id="cx_trisal">
+            <h2>VEJA A IDADE ENTRE O TRISAL</h2>
+            <label for="idade_trisal1">1º Pessoa:</label>
+            <input type="number" id="idade_trisal1" name="idade_trisal1" placeholder="ano(s)" min="0" required>
+            <input type="number" id="idade_trisal1_mes" name="idade_trisal1_mes" placeholder="mes(es)" min="0" max="12" required><br>
+
+            <label for="idade_trisal2">2º Pessoa:</label>
+            <input type="number" id="idade_trisal2" name="idade_trisal2" placeholder="ano(s)" min="0" required>
+            <input type="number" id="idade_trisal2_mes" name="idade_trisal2_mes" placeholder="mes(es)" min="0" max="12" required><br>
+
+            <label for="idade_trisal3">3º Pessoa:</label>
+            <input type="number" id="idade_trisal3" name="idade_trisal3" placeholder="ano(s)" min="0" required>
+            <input type="number" id="idade_trisal3_mes" name="idade_trisal3_mes" placeholder="mes(es)" min="0" max="12" required>
+
+            <p id="res_trisal"></p>
+
+            <button type="button" id="botao_trisal">TESTAR</button>
+        </div>
+    </section>
+
+    <footer>
+        <p>Ramon Moreira - 2024 - Todos os Direitos Reservados.</p>
+    </footer>
+    </div>
+</body>
+</html>
