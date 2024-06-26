@@ -1,4 +1,4 @@
-﻿document.addEventListener("DOMContentLoaded", function() {
+document.addEventListener("DOMContentLoaded", function() {
     document.getElementById("botao_ind").addEventListener("click", function(event) {
         event.preventDefault();
         recebeIdadeInd();
@@ -32,11 +32,14 @@ function recebeIdadeInd() {
     }
     if(id_max % 2 != 0){
         id_max = Math.floor(id_max);
+        if(id_max >= 100){
+            id_max = 99;
+        }
     }
     if (idade < 13){
         document.getElementById("res_ind").innerHTML = "Você é novo(a) demais para namorar!";
         document.getElementById("res_ind").style.color = "red";
-    } else if (idade > 100) {
+    } else if (idade >= 100) {
         document.getElementById("res_ind").innerHTML = "Você é velho(a) demais para namorar! Lei: 8.112!";
         document.getElementById("res_ind").style.color = "red";
     } else {
@@ -83,13 +86,16 @@ function recebeIdadeCasal() {
     } else if (idade1 > 12 && idade2 < 13) {
         document.getElementById("res_casal").innerHTML = `Você com ${idade2} anos é novo(a) demais para namorar!<br>NÃO É UM CASAL!`;
         document.getElementById("res_casal").style.color = "red";
-    } else if (idade1 > 100 && idade2 > 100) {
+    } else if (idade1 >= 100 && idade2 >= 100) {
         document.getElementById("res_casal").innerHTML = "Vocês são velhos demais para namorar! Lei: 8.112!<br>NÃO É UM CASAL!";
         document.getElementById("res_ind").style.color = "red";
-    } else if (idade1 > 100 && idade2 <= 100) {
+    } else if (idade1 >= 100 && idade2 < 100) {
         document.getElementById("res_casal").innerHTML = `Você com ${idade1} anos é velho(a) demais para namorar! Lei: 8.112!<br>NÃO É UM CASAL!`;
         document.getElementById("res_casal").style.color = "red";
-    } else if (idade1 <= id_max2) {
+    }else if (idade1 < 100 && idade2 >= 100) {
+        document.getElementById("res_casal").innerHTML = `Você com ${idade2} anos é velho(a) demais para namorar! Lei: 8.112!<br>NÃO É UM CASAL!`;
+        document.getElementById("res_casal").style.color = "red";
+    } else if (idade1 <= id_max2 && idade2 < 100) {
         document.getElementById("res_casal").innerHTML = `Vocês podem namorar!<br>É UM CASAL`;
         document.getElementById("res_casal").style.color = "blue";
     } else {
@@ -152,15 +158,15 @@ function recebeIdadeTrisal() {
             document.getElementById("res_trisal").innerHTML = `O(A) chupador(a) de bico com ${id_3} anos não pode namorar ainda!<br>Mas quem tem ${id_1} anos pode namorar com quem tem ${id_2} anos!<br>NÃO É UM TRISAL!`;
             document.getElementById("res_trisal").style.color = "red";
         }
-    } else if (id_1 > 100 || id_2 > 100 || id_3 > 100) {
-        if (id_3 > 100) {
+    } else if (id_1 >= 100 || id_2 >= 100 || id_3 >= 100) {
+        if (id_3 >= 100) {
             document.getElementById("res_trisal").innerHTML = `As três pessoas não podem namorar, Lei: 8.112!<br>NÃO É UM TRISAL!`;
             document.getElementById("res_trisal").style.color = "red";
-        } else if (id_2 > 100) {
+        } else if (id_2 >= 100) {
             document.getElementById("res_trisal").innerHTML = `As pessoas com ${id_1} anos e com ${id_2} anos não podem namorar a outra, Lei: 8.112!<br>NÃO É UM TRISAL!`;
             document.getElementById("res_trisal").style.color = "red";
-        } else if (id_1 > 100) {
-            document.getElementById("res_trisal").innerHTML = `A pessoa com ${id_1} anos não pode namorar as outras duas, Lei: 8.112! Mas quem tem ${id_2} anos pode namorar com a pessoa com ${id_3} anos!<br>NÃO É UM TRISAL!`;
+        } else if (id_1 >= 100) {
+            document.getElementById("res_trisal").innerHTML = `A pessoa com ${id_1} anos não pode namorar as outras duas,<br>Lei: 8.112!<br>Mas quem tem ${id_2} anos pode namorar com a pessoa com ${id_3} anos!<br>NÃO É UM TRISAL!`;
             document.getElementById("res_trisal").style.color = "red";
         }
     } else if (id_1 <= id_max2 || id_1 <= id_max3 || id_2 <= id_max3) {
